@@ -5,7 +5,7 @@ sudo apt install default-jre
 # install java compiler
 sudo apt install default-jdk 
 # download project files.
-sudo wget --no-check-certificate --no-cache --no-cookies https://github.com/anoohya29/CS655Final/blob/7081a1688b6f8f793042b6dc17e038a1d19517a7/CS655FinalProject.tar.gz --post-data="action=purge"
+sudo wget --no-check-certificate --no-cache --no-cookies https://github.com/anoohya29/CS655Final/blob/7081a1688b6f8f793042b6dc17e038a1d19517a7/CS655FinalProject.tar.gz
 # extract project files
 sudo tar -zvxf CS655FinalProject.tar.gz
 # Change directory to worker folder.

@@ -3,7 +3,10 @@ sudo apt update
 # install java runtime environment
 sudo apt install default-jre  
 # install java compiler
-sudo apt install default-jdk 
+sudo apt install default-jdk
+# delete old files
+sudo rm main.zip
+sudo rm -r CS655Final-main
 # download project files.
 sudo wget --no-check-certificate --no-cache --no-cookies https://github.com/anoohya29/CS655Final/archive/refs/heads/main.zip
 # extract project files

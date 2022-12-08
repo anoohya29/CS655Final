@@ -8,7 +8,7 @@ const portNumForm = document.getElementById('port-number-form');
 const portNumInputField = document.getElementById('port-number-input-field');
 
 // Url of manager node
-const BASE_URL = 'pcvm2-9.instageni.utdallas.edu';
+const BASE_URL = 'pc2.instageni.utdallas.edu';
 
 // Length of an available password
 const PASSWORD_LEN = 5;

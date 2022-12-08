@@ -11,8 +11,8 @@ public class NodeManagerThread implements Runnable {
     
     //Attributs
     private Socket socket;
-    private Worker worker;
-    private int idNodeManagerThread;
+    private final Worker worker;
+    private final int idNodeManagerThread;
     private String message;
 
     //Constructor

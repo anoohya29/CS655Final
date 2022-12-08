@@ -13,7 +13,7 @@ import java.util.List;
 public class WorkerNode {
     
     //Attributes
-    private int portNumber;
+    private final int portNumber;
 
     //Constructor
     public WorkerNode(int portNumber) {

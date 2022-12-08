@@ -7,7 +7,7 @@ sudo apt install default-jdk
 # we need to insatll nginx
 sudo apt install nginx
 # download project files.
-sudo wget --no-check-certificate --no-cache --no-cookies https://github.com/anoohya29/CS655Final/blob/7081a1688b6f8f793042b6dc17e038a1d19517a7/CS655FinalProject.tar.gz
+sudo wget --no-check-certificate --no-cache --no-cookies https://github.com/anoohya29/CS655Final/blob/e16db664b63f50f17b155b36f728c5c0ab4722c2/CS655FinalProject.tar.gz
 # extract project files
 sudo tar -zvxf CS655FinalProject.tar.gz
 # create the configuration file for nginx

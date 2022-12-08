@@ -100,7 +100,7 @@ function createUserForm(userID) {
 
     let htmlCode = `<form id="form-${userID}">
                         <div class="list-item mb-2" data-id="16">
-                            <div><a href="#" data-abc="true"><span class="w-48 avatar gd-info">F</span></a></div>
+                            <div><a href="#" data-abc="true"><span class="w-48 avatar gd-info">${userID}</span></a></div>
                             <div class="flex">
                                 <a href="#" class="item-author text-color" data-abc="true">User ${userID}: </a>
                                 <div class="item-except text-muted text-sm h-1x">This is a user</div>

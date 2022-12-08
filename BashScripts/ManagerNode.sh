@@ -7,9 +7,9 @@ sudo apt install default-jdk
 # we need to insatll nginx
 sudo apt install nginx
 # download project files.
-sudo wget --no-check-certificate --no-cache --no-cookies https://github.com/anoohya29/CS655Final/blob/e16db664b63f50f17b155b36f728c5c0ab4722c2/CS655FinalProject.tar.gz
+sudo wget --no-check-certificate --no-cache --no-cookies https://github.com/anoohya29/CS655Final/archive/refs/heads/main.zip
 # extract project files
-sudo tar -zvxf CS655FinalProject.tar.gz
+sudo unzip main.zip
 # create the configuration file for nginx
 sudo touch /etc/nginx/conf.d/static-naice-me.conf
 # start writing configuration for nginx

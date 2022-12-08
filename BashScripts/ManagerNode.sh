@@ -25,7 +25,7 @@ sudo echo '}' >> /etc/nginx/conf.d/static-naice-me.conf
 # restart the nginx
 sudo nginx -s reload  
 # Change directory to manager folder.
-cd CS655FinalProject/ManagerNode
+cd CS655Final-main/ManagerNode
 # complie the java files
 sudo javac NodeManager.java
 # start the manager

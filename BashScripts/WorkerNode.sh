@@ -9,8 +9,8 @@ sudo wget --no-check-certificate --no-cache --no-cookies https://github.com/anoo
 # extract project files
 sudo unzip main.zip
 # Change directory to worker folder.
-cd CS655FinalProject/WorkerNode  # go into the worker node folder
+cd CS655Final-main/WorkerNode  # go into the worker node folder
 # complie the java files
 sudo javac WorkerNode.java
 # start the worker
-sudo java WorkerNode 58100  
+sudo java WorkerNode 58100

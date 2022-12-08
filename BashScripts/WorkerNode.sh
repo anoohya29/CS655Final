@@ -13,4 +13,4 @@ cd CS655FinalProject/WorkerNode  # go into the worker node folder
 # complie the java files
 sudo javac WorkerNode.java
 # start the worker
-sudo java Worker 58100  
+sudo java WorkerNode 58100  

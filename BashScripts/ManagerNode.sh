@@ -17,7 +17,7 @@ sudo unzip main.zip
 sudo touch /etc/nginx/conf.d/static-naice-me.conf
 # start writing configuration for nginx
 sudo echo 'server {' > /etc/nginx/conf.d/static-naice-me.conf
-sudo echo '  server_name pcvm3-7.geni.uchicago.edu/;' >> /etc/nginx/conf.d/static-naice-me.conf
+sudo echo '  server_name pcvm3-7.geni.uchicago.edu;' >> /etc/nginx/conf.d/static-naice-me.conf
 sudo echo '  root '`pwd`'/CS655Final-main/Web;' >> /etc/nginx/conf.d/static-naice-me.conf
 sudo echo '  index index.html;' >> /etc/nginx/conf.d/static-naice-me.conf
 sudo echo '  location ~* ^.+\.(jpg|jpeg|gif|png|ico|css|js|pdf|txt){' >> /etc/nginx/conf.d/static-naice-me.conf

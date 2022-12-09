@@ -75,8 +75,6 @@ public class WorkerNode {
                 serverSocket.close();
             } catch (Exception e) {
                 System.out.println(e.getMessage());
-            }finally{
-                rstSender.close();
             }
         }
     }

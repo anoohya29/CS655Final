@@ -84,9 +84,6 @@ public class NodeManager {
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
-        }finally{
-            // Close the connection
-            serverSocket.close();
         }
     }
 

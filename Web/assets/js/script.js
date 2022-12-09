@@ -8,7 +8,7 @@ const portNumForm = document.getElementById('port-number-form');
 const portNumInputField = document.getElementById('port-number-input-field');
 
 // Url of manager node
-const BASE_URL = 'pcvm3-7.geni.uchicago.edu';
+const BASE_URL = 'pcvm3-8.instageni.cenic.net';
 
 // Length of an available password
 const PASSWORD_LEN = 5;
@@ -98,38 +98,121 @@ function removeUserForm(userID) {
 
 function createUserForm(userID) {
 
-    let htmlCode = `<form id="form-${userID}">
-                        <div class="list-item mb-2" data-id="16">
-                            <div><a href="#" data-abc="true"><span class="w-48 avatar gd-info">${userID}</span></a></div>
-                            <div class="flex">
-                                <a href="#" class="item-author text-color" data-abc="true">User ${userID}: </a>
-                                <div class="item-except text-muted text-sm h-1x">This is a user</div>
-                            </div>
-                            <div class="no-wrap">
-                                <input type="text" placeholder="${PASSWORD_LEN}-character password" id="input-password-crack-${userID}" class="form-control form-control-lg" minlength="5" maxlength="5" required>
-                            </div>
-                            <div class="no-wrap">
-                                <button class="btn btn-success btn-block" id="submitBtn" type="submit">Submit</button>
-                            </div>
-                            <div class="no-wrap">
-                                <button class="btn btn-primary btn-block" id="randomBtn-${userID}" type="button">Random</button>
-                            </div>
-                            <div class="no-wrap">
-                                <button class="btn btn-danger btn-block" id="removeBtn-${userID}" type="button">Remove</button>
-                            </div>
-                            <div class="no-wrap">
-                                <div class="item-date text-muted text-sm d-none d-md-block" id="password-crack-result-${userID}">Result: </div>
-                            </div>
-                        </div>
-                    </form>`;
+    const form = document.createElement('form');
+    form.id = `form-${userID}`;
+
+    const div1 = document.createElement('div');
+    div1.className = `list-item mb-2`;
+    div1.setAttribute("data-id", "16");
+
+    const div9 = document.createElement('div');
+    div9.setAttribute("class", "no-wrap");
+    const result = document.createElement('label');
+    result.setAttribute("class", "item-date text-muted text-sm d-none d-md-block");
+    result.setAttribute("id", `password-crack-result-${userID}`);
+    result.textContent = "Result: ";
+    div9.appendChild(result);
+
+    const div2 = document.createElement('div');
+    const a1 = document.createElement('a');
+    a1.setAttribute("href", "#");
+    a1.setAttribute("data-abc", "true");
+    const span1 = document.createElement('span');
+    span1.setAttribute("class", "w-48 avatar gd-info");
+    span1.textContent = `User ${userID}`;
+    a1.appendChild(span1);
+    div2.appendChild(a1);
+    div1.appendChild(div2);
+
+    const div3 = document.createElement('div');
+    div3.setAttribute("class", "flex");
+    const a3 = document.createElement('a');
+    a3.setAttribute("href", "#");
+    a3.setAttribute("class", "item-author text-color");
+    a3.setAttribute("data-abc", "true");
+    a3.textContent = `User ${userID}: `;
+    const div4 = document.createElement('div');
+    div4.setAttribute("class", "item-except text-muted text-sm h-1x");
+    div4.textContent = `This is a user number ${userID}`;
+    div3.appendChild(a3);
+    div3.appendChild(div4);
+    div1.appendChild(div3);
+
+    const div5 = document.createElement('div');
+    div5.setAttribute("class", "no-wrap");
+    const input1 = document.createElement('input');
+    input1.setAttribute("type", "text");
+    input1.setAttribute("placeholder", `${PASSWORD_LEN}-character password`);
+    input1.setAttribute("id", `input-password-crack-${userID}`);
+    input1.setAttribute("class", "form-control form-control-lg");
+    input1.setAttribute("minlength", "5");
+    input1.setAttribute("maxlength", "5");
+    div5.appendChild(input1);
+    div1.appendChild(div5);
+
+    const div6 = document.createElement('div');
+    div6.setAttribute("class", "no-wrap");
+    const submitBtn = document.createElement('button');
+    submitBtn.setAttribute("class", "btn btn-success btn-block");
+    submitBtn.setAttribute("id", "submitBtn");
+    submitBtn.setAttribute("type", "submit");
+    submitBtn.textContent = "Submit";
+    div6.appendChild(submitBtn);
+    div1.appendChild(div6);
+
+    const div7 = document.createElement('div');
+    div7.setAttribute("class", "no-wrap");
+    const randomBtn = document.createElement('button');
+    randomBtn.setAttribute("class", "btn btn-primary btn-block");
+    randomBtn.setAttribute("id", `randomBtn-${userID}`);
+    randomBtn.setAttribute("type", "button");
+    randomBtn.textContent = "Random";
+    randomBtn.onclick = () => {
+        if (result.textContent !== 'Pending') {
+            input1.value = randomString(PASSWORD_LEN);
+        } else {
+            alert('The cracking is running!');
+        }
+    }
+    div7.appendChild(randomBtn);
+    div1.appendChild(div7);
+
+    const div8 = document.createElement('div');
+    div8.setAttribute("class", "no-wrap");
+    const removeBtn = document.createElement('button');
+    removeBtn.setAttribute("class", "btn btn-danger btn-block");
+    removeBtn.setAttribute("id", `removeBtn-${userID}`);
+    removeBtn.setAttribute("type", "button");
+    removeBtn.textContent = "Remove";
+    removeBtn.onclick = () => {
+        if (result.textContent !== 'Pending') {
+            removeUserForm(userID);
+        } else {
+            alert('The cracking is running!');
+        }
+    }
+    div8.appendChild(removeBtn);
+    div1.appendChild(div8);
+
+    div1.appendChild(div9);
+
+    form.onsubmit = function(e) {
+        e.preventDefault();
+        const password = input1.value;
+        if (result.textContent !== 'Pending') {
+            submitPassword(password, portNum, userID, result, input);
+        } else {
+            alert('The cracking is running!');
+        }
+    }
     
-    return htmlCode;
+    return form;
 }
 
 function addUser() {
     const newForm = createUserForm(userNum);
-    listUsers.innerHTML += (newForm);
-    defineButtonsActions(userNum);
+    listUsers.appendChild(newForm);
+    //defineButtonsActions(userNum);
     userNum++;
 }
 

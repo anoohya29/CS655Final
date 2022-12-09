@@ -118,7 +118,7 @@ function createUserForm(userID) {
     a1.setAttribute("data-abc", "true");
     const span1 = document.createElement('span');
     span1.setAttribute("class", "w-48 avatar gd-info");
-    span1.textContent = `User ${userID}`;
+    span1.textContent = `${userID}`;
     a1.appendChild(span1);
     div2.appendChild(a1);
     div1.appendChild(div2);

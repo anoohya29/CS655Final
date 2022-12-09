@@ -40,7 +40,11 @@ public class NodeManagerThread implements Runnable {
 
             // generate the HTTP respond with the result of the cracking
             String response = "";
-            response += "HTTP/1.1 200 OK\nAccess-Control-Allow-Origin:*\nContent-Type: text\\plain\nContent-Length: " + rst.length() + "\n";
+            response += "HTTP/1.1 200 OK\n";
+            response += "Access-Control-Allow-Origin:*\n";
+            response += "Content-Type: text\\plain\n";
+            response += "Content-Length: " + rst.length() + '\n';
+            response += "\n";
             response += rst;
 
             OutputStream outputStream = socket.getOutputStream();

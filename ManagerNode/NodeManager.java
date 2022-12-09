@@ -68,7 +68,13 @@ public class NodeManager {
                     System.out.println("Received a connection check request.");
 
                     // if the message is the connection check message, simply response the front end with "OK"
-                    String response = "HTTP/1.1 200 OK\n" + "Access-Control-Allow-Origin:*\n" + "Content-Type: text\\plain\n" + "Content-Length: " + "OK".length() + "\nOK";
+                    String response = "";
+                    response += "HTTP/1.1 200 OK\n";
+                    response += "Access-Control-Allow-Origin:*\n";
+                    response += "Content-Type: text\\plain\n";
+                    response += "Content-Length: " + "OK".length() + '\n';
+                    response += "\n";
+                    response += "OK";
 
                     OutputStream outputStream = client.getOutputStream();
                     BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(outputStream));

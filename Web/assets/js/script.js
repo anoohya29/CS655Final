@@ -168,7 +168,7 @@ function createUserForm(userID) {
     randomBtn.textContent = "Random";
     randomBtn.onclick = () => {
         if (result.textContent !== 'Pending') {
-            input1.value = randomString(PASSWORD_LEN);
+            input1.value = generateRandomString(PASSWORD_LEN);
         } else {
             alert('The cracking is running!');
         }
@@ -201,7 +201,7 @@ function createUserForm(userID) {
         e.preventDefault();
         const password = input1.value;
         if (result.textContent !== 'Pending') {
-            submitPassword(password, portNum, userID, result, input);
+            submitPassword(password, portNum, userID, result, input1);
         } else {
             alert('The cracking is running!');
         }

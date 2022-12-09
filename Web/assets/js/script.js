@@ -195,6 +195,8 @@ function createUserForm(userID) {
 
     div1.appendChild(div9);
 
+    form.appendChild(div1);
+
     form.onsubmit = function(e) {
         e.preventDefault();
         const password = input1.value;

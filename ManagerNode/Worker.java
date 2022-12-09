@@ -50,11 +50,6 @@ public class Worker {
     //To String
     @Override
     public String toString() {
-        return "{" +
-            " ipWorker='" + getIpWorker() + "'" +
-            ", ipManager='" + getIpManager() + "'" +
-            ", portNumber='" + getPortNumber() + "'" +
-            ", idWorker='" + getIdWorker() + "'" +
-            "}";
+        return "ID: " + idWorker + ", manager IP: " + ipManager +  ", worker IP: " + ipWorker + ", Port: " + portNumber;
     }
 }

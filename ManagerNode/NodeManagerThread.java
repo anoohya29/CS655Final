@@ -84,6 +84,8 @@ public class NodeManagerThread implements Runnable {
                     rstPort++;
                 }
             }
+            System.out.println("*****" + targetIp);
+            System.out.println("*****" + port);
             Socket workerSender = new Socket(targetIp, port);
             OutputStream outputStreamWorker = workerSender.getOutputStream();
             BufferedWriter bwWorker = new BufferedWriter(new OutputStreamWriter(outputStreamWorker));
